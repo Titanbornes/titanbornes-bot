@@ -22,11 +22,15 @@ module.exports = async function setCommandPermissions() {
         }
 
         while (!royaleInitiate) {
-            royaleInitiate = guild.commands.cache.find((c) => c.name === 'royale-initiate')
+            royaleInitiate = guild.commands.cache.find(
+                (c) => c.name === 'royale-initiate'
+            )
         }
 
         while (!royaleRumble) {
-            royaleRumble = guild.commands.cache.find((c) => c.name === 'royale-rumble')
+            royaleRumble = guild.commands.cache.find(
+                (c) => c.name === 'royale-rumble'
+            )
         }
 
         const fullPermissions = [
@@ -99,7 +103,7 @@ module.exports = async function setCommandPermissions() {
                         permission: true,
                     },
                 ],
-            }
+            },
         ]
 
         await guild.commands.permissions.set({ fullPermissions })

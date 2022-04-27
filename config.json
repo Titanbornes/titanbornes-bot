@@ -1,11 +1,8 @@
 {
     "invitePoints": 7500,
-    "receptionBotID": "928293215017271386",
-    "ownerID": "586796765651533835",
     "guildID": "851913048703631360",
     "embed_color": "GOLD",
     "role": {
-        "initiateID": "932259303811846224",
         "memberID": "879688006909460520",
         "founderID": "875725451396526111",
         "officialBotID": "936230833415655494",
@@ -15,11 +12,7 @@
         "titanbornesID": "932218307996700672",
         "reapersID": "923156353147609100",
         "trickstersID": "923513244516237332",
-        "nightmaresID": "928315484040994896",
-        "ogID": "951520550524710912",
-        "gamersID": "961989405738946650",
-        "raidersID": "961989849181749288",
-        "developersID": "961989849181749288"
+        "nightmaresID": "928315484040994896"
     },
     "channel": {
         "sensitive": {
