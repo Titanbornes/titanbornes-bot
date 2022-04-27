@@ -1,0 +1,60 @@
+{
+    "invitePoints": 7500,
+    "receptionBotID": "928293215017271386",
+    "ownerID": "586796765651533835",
+    "guildID": "851913048703631360",
+    "embed_color": "GOLD",
+    "role": {
+        "initiateID": "932259303811846224",
+        "memberID": "879688006909460520",
+        "founderID": "875725451396526111",
+        "officialBotID": "936230833415655494",
+        "modID": "937498213697613825",
+        "whitelistID": "932218824051273759",
+        "walletSubmissionID": "939461636723453982",
+        "titanbornesID": "932218307996700672",
+        "reapersID": "923156353147609100",
+        "trickstersID": "923513244516237332",
+        "nightmaresID": "928315484040994896",
+        "ogID": "951520550524710912",
+        "gamersID": "961989405738946650",
+        "raidersID": "961989849181749288",
+        "developersID": "961989849181749288"
+    },
+    "channel": {
+        "sensitive": {
+            "welcomeID": "851913048703631362",
+            "announcementsID": "851913048703631363",
+            "faqID": "851913048703631364",
+            "linksID": "903937928454111292",
+            "roadmapID": "879409798712541284",
+            "techID": "944503877242322974",
+            "loreID": "903958185658941451",
+            "fusionID": "931120547599884289",
+            "whitelistID": "931120779486171208",
+            "safetyID": "931164848279154708",
+            "terminologyID": "931213004618494063",
+            "commandsInfoID": "930846958485114940",
+            "giveawaysID": "952234655787151492",
+            "eventRolesID": "961991044709363713"
+        },
+        "records": {
+            "invitesID": "934537477895651359",
+            "salesID": "949615368626917406"
+        },
+        "input": {
+            "commandsID": "932206090790260747"
+        },
+        "generalID": "879415062681497610",
+        "testID": "934900608824123495"
+    },
+    "sales": {
+        "address": "0xeFa5D4e8F049A7d0eF7D5e738C673FFB8C23dc3D",
+        "name": "Titanbornes",
+        "baseURI": "https://titanbornes.herokuapp.com/api/metadata/",
+        "LooksrareURL": "https://looksrare.org/collections/",
+        "X2Y2URL": "https://x2y2.io/eth/",
+        "RaribleURL": "https://rarible.com/token/",
+        "OpenSeaURL": "https://opensea.io/assets/"
+    }
+}

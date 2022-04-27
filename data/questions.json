@@ -1,0 +1,81 @@
+[
+    {
+        "question": "What is Titanbornes's mint price?",
+        "answer": "FREE",
+        "options": [
+            "FREE",
+            "035 ETH",
+            "008 ETH",
+            "Dutch Auction Starting at 3 ETH"
+        ]
+    },
+    {
+        "question": "What happens when you already own a Titanbornes NFT and buy one from the secondary market?",
+        "answer": "The NFT I bought gets burned and my original NFT increments its Fusion Count",
+        "options": [
+            "The NFT I bought gets burned and my original NFT increments its Fusion Count",
+            "Transaction Proceeds as normal",
+            "Both Get Burned"
+        ]
+    },
+    {
+        "question": "What is the total supply?",
+        "answer": "4,000",
+        "options": ["4,000", "400", "10,000"]
+    },
+    {
+        "question": "How many can I mint?",
+        "answer": "One",
+        "options": ["One", "Two", "Four", "TBA"]
+    },
+    {
+        "question": "When can I mint?",
+        "answer": "TBA",
+        "options": ["TBA", "May 10th", "June 1st"]
+    },
+    {
+        "question": "What blockchain?",
+        "answer": "Ethereum",
+        "options": ["Ethereum", "Polygon", "zkSync", "Solana"]
+    },
+    {
+        "question": "Wen Whitelist?",
+        "answer": "48 hours before the mint",
+        "options": ["48 hours before the mint", "It already happened", "TBA"]
+    },
+    {
+        "question": "Will the NFTs have factions too?",
+        "answer": "Yes, with noticeably different artworks",
+        "options": [
+            "Yes, with noticeably different artworks",
+            "No, factions are only for Discord",
+            "TBA"
+        ]
+    },
+    {
+        "question": "Will my NFT have the same faction as my Discord role?",
+        "answer": "Yes, if Whitelisted",
+        "options": ["Yes, if Whitelisted", "No", "TBA"]
+    },
+    {
+        "question": "Will friends that I invite join my faction?",
+        "answer": "Yes",
+        "options": ["Yes", "No", "TBA"]
+    },
+    {
+        "question": "What are Titanbornes' commercial rights?",
+        "answer": "CC0, Creative Commons Zero",
+        "options": [
+            "CC0, Creative Commons Zero",
+            "CC BY, Creative Commons Attribution License",
+            "CC BY-SA, Attribution-ShareAlike",
+            "CC BY-NC, Attribution-NonCommercial",
+            "CC BY-ND, Attribution-NoDerivs"
+        ]
+    },
+    {
+        "question": "Is Titanbornes' Technology going to be open-sourced?",
+        "answer": "Yes",
+        "options": ["Yes", "No", "TBA"]
+    }
+]
