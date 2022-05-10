@@ -29,7 +29,9 @@ module.exports = async function infiltrateHandler(interaction) {
 
             if (generatedDice > (isReapers ? 7 : 7)) {
                 image =
-                    'https://user-images.githubusercontent.com/45223699/159432247-1e4c3eea-9f70-4f74-afe7-ca980f57742e.jpg'
+                    config.gifs.lose[
+                        await randomNumberInRange(0, config.gifs.lose.length)
+                    ]
                 const generatedXP = await randomNumberInRange(1000, 2500)
 
                 fetchedUser.xp += generatedXP

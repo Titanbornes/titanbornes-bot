@@ -12,6 +12,7 @@ module.exports = async function raidHandler(interaction) {
             tempRaidData[interaction.user.id]
 
         if (interaction.customId === 'raid-accept') {
+            // Won
             await interaction.update({
                 embeds: [
                     new MessageEmbed()
@@ -28,11 +29,17 @@ module.exports = async function raidHandler(interaction) {
                 generatedRandomXP
             )} XP and return.`
 
+            const image =
+                config.gifs.win[
+                    await randomNumberInRange(0, config.gifs.win.length)
+                ]
+
             await interaction.channel.send({
                 embeds: [
                     new MessageEmbed()
                         .setColor(config.embed_color)
                         .setDescription(description)
+                        .setImage(image ? image : '')
                         .setTimestamp(),
                 ],
             })
@@ -40,17 +47,24 @@ module.exports = async function raidHandler(interaction) {
             fetchedUser.xp += generatedRandomXP
             await fetchedUser.save()
         } else {
+            // Continue
+
             let image
             const generatedDice = await randomNumberInRange(1, 8)
 
             if (generatedDice > 5) {
+                // Lost
+
                 image =
-                    'https://user-images.githubusercontent.com/45223699/159438209-427b0ac9-ea1d-4a3e-885b-e9d6b8ec38cc.jpg'
+                    config.gifs.lose[
+                        await randomNumberInRange(0, config.gifs.lose.length)
+                    ]
+
                 await interaction.update({
                     embeds: [
                         new MessageEmbed()
                             .setColor(config.embed_color)
-                            .setDescription(`Your venture ended...`)
+                            .setDescription(`You can dismiss this message.`)
                             .setTimestamp(),
                     ],
                     components: [],
@@ -74,6 +88,7 @@ module.exports = async function raidHandler(interaction) {
                     ],
                 })
             } else {
+                // Continue
                 const generatedNewXP =
                     generatedRandomXP +
                     Math.floor(

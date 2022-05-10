@@ -44,10 +44,20 @@ module.exports = async function blacksmithHandler(interaction) {
                 generatedXP > 500 ? 'earned' : 'lost'
             } ${inlineCode(Math.abs(generatedXP - 500))} XP.`
 
+            const image =
+                generatedXP > 500
+                    ? config.gifs.win[
+                          await randomNumberInRange(0, config.gifs.win.length)
+                      ]
+                    : config.gifs.lose[
+                          await randomNumberInRange(0, config.gifs.lose.length)
+                      ]
+
             await interaction.channel.send({
                 embeds: [
                     new MessageEmbed()
                         .setColor(config.embed_color)
+                        .setImage(image ? image : '')
                         .setDescription(description)
                         .setTimestamp(),
                 ],

@@ -1,5 +1,4 @@
 {
-    "invitePoints": 7500,
     "guildID": "851913048703631360",
     "embed_color": "GOLD",
     "role": {
@@ -49,5 +48,25 @@
         "X2Y2URL": "https://x2y2.io/eth/",
         "RaribleURL": "https://rarible.com/token/",
         "OpenSeaURL": "https://opensea.io/assets/"
+    },
+    "gifs": {
+        "lose": [
+            "https://media1.giphy.com/media/eMPnaFtFbJ2z3LFP2E/giphy.gif?cid=790b761122b00043c643d62b1879eab7021cc804b0475f8f&rid=giphy.gif&ct=g",
+            "https://media4.giphy.com/media/1USKMDPjuH4ovL7J5h/giphy.gif?cid=790b76119e8885078dccd43998e12d86556c21cd70e94be2&rid=giphy.gif&ct=g",
+            "https://media2.giphy.com/media/ckByC9YYEYpCq5nxE9/giphy.gif?cid=790b76115cab99546ab4ecffb9eb73527b12d8609cb339d0&rid=giphy.gif&ct=g",
+            "https://media1.giphy.com/media/Q66QYxmCOcY0CnBMGI/giphy.gif?cid=790b7611acbb0bf2338666b6636e1e37ebb93b5d9f9e3910&rid=giphy.gif&ct=g",
+            "https://media0.giphy.com/media/VeN7tau74VbfG6hcfr/giphy.gif?cid=790b7611a52717cd2d1e27e13c5d8f118d8f17d9d9dc12b1&rid=giphy.gif&ct=g",
+            "https://media4.giphy.com/media/cODrlNTkGnZGVtVagd/giphy.gif?cid=790b761129ff98269eb7b30c1f45d9a6d3bb68441e1527f3&rid=giphy.gif&ct=g",
+            "https://media2.giphy.com/media/afqT2ykIlYcVi/giphy.gif?cid=790b7611eafc515fec7396b6f64e4c80101ff612fecdde70&rid=giphy.gif&ct=g"
+        ],
+        "win": [
+            "https://media1.giphy.com/media/YlGi4AtvW4YsqV1uLZ/giphy.gif?cid=790b7611fe7abd8687718192c7bb7d73cb90e9ad2c6223af&rid=giphy.gif&ct=g",
+            "https://media4.giphy.com/media/KDQ25pahVfwGRvvT9X/giphy.gif?cid=790b7611c253e16d2c8c9a1de94b46a83a89278b7647f327&rid=giphy.gif&ct=g",
+            "https://media3.giphy.com/media/bSaZ6eXAOO01SX75w2/giphy.gif?cid=790b761104d10c9a2ee691a8e29764da0b468cb7e1a462e6&rid=giphy.gif&ct=g",
+            "https://media1.giphy.com/media/wFbI8gwCfCxeo/giphy.gif?cid=790b7611c9c5be83b4e92964f73831002261875d77f0b4d9&rid=giphy.gif&ct=g",
+            "https://media4.giphy.com/media/l41lI4bYmcsPJX9Go/giphy.gif?cid=790b761161a388cc7ca15632154b53f323e40397bf3db619&rid=giphy.gif&ct=g",
+            "https://media0.giphy.com/media/JTa7LMZnXcrF0oyMxo/giphy.gif?cid=790b7611cea78ffc5514f9094c60efe0ad0c6c43cfdc9023&rid=giphy.gif&ct=g",
+            "https://user-images.githubusercontent.com/45223699/167655509-14c96314-cfe3-4338-ac5d-4e32741c5275.gif"
+        ]
     }
 }

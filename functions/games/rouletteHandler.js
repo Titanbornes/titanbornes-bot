@@ -111,6 +111,8 @@ module.exports = {
                                 (await tempRouletteData[key].singleNumChoice) ==
                                 (await tempRouletteGame.game.num)
                             ) {
+                                // Won
+
                                 const fetchedFaction =
                                     await FactionModel.findOne({
                                         name: fetchedUser.faction,
@@ -119,6 +121,14 @@ module.exports = {
                                 fetchedFaction.spots += 5
                                 await fetchedFaction.save()
 
+                                const image =
+                                    config.gifs.win[
+                                        await randomNumberInRange(
+                                            0,
+                                            config.gifs.win.length
+                                        )
+                                    ]
+
                                 await interaction.channel.send({
                                     embeds: [
                                         new MessageEmbed()
@@ -126,9 +136,7 @@ module.exports = {
                                             .setDescription(
                                                 `<@${key}> WON! Their faction wins 10 WL spots!`
                                             )
-                                            .setImage(
-                                                'https://user-images.githubusercontent.com/45223699/159432247-1e4c3eea-9f70-4f74-afe7-ca980f57742e.jpg'
-                                            )
+                                            .setImage(image ? image : '')
                                             .setTimestamp(),
                                     ],
                                 })
@@ -141,6 +149,8 @@ module.exports = {
 
                                 fetchedUser.xp += won
                             } else {
+                                // Lost
+
                                 const lost = tempRouletteData[key].xpChoice
 
                                 losers += `<@${key}> LOST ${bold(

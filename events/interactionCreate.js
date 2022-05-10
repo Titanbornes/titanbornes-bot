@@ -56,7 +56,6 @@ client.on('interactionCreate', async (interaction) => {
                 )
 
                 if (cmd) {
-                    // checking user perms
                     if (
                         !interaction.member.permissions.has(
                             cmd.permissions || []
@@ -75,7 +74,7 @@ client.on('interactionCreate', async (interaction) => {
                     cmd.run(client, interaction, args)
                 }
             }
-            
+
             if (interaction.isButton()) {
                 if (interaction.customId === 'welcome-button') {
                     if (await checkRole(interaction, 'Member')) {

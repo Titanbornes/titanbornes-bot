@@ -39,7 +39,7 @@ client.on('ready', async () => {
 
     // await setCodeUses()
     await getChannels()
-    await setCommandPermissions()
+    // await setCommandPermissions()
     // contractListener()
 
     scheduledMessage(config.channel.testID, '*/29 * * * *', 'Ping!')

@@ -61,12 +61,14 @@ module.exports = {
                 },
             ]
 
+            const image = await metadata.data.image
+
             await providedChannel.send({
                 embeds: [
                     new MessageEmbed()
                         .setColor(config.embed_color)
                         .addFields(fields)
-                        .setImage(await metadata.data.image),
+                        .setImage(image ? image : ''),
                 ],
             })
         } catch (error) {
@@ -123,12 +125,14 @@ module.exports = {
                 },
             ]
 
+            const image = await metadata.data.image
+
             await providedChannel.send({
                 embeds: [
                     new MessageEmbed()
                         .setColor(config.embed_color)
                         .addFields(fields)
-                        .setImage(await metadata.data.image),
+                        .setImage(image ? image : ''),
                 ],
             })
         } catch (error) {
