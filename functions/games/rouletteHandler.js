@@ -7,6 +7,7 @@ const wait = require('timers/promises').setTimeout
 const { tempRouletteGame, tempRouletteData } = require('../core/createTempData')
 const UserModel = require('../../database/models/userModel')
 const FactionModel = require('../../database/models/factionModel')
+const getGIF = require('../helpers/getGIF')
 
 module.exports = {
     createRouletteTable: async function () {
@@ -121,20 +122,7 @@ module.exports = {
                                 fetchedFaction.spots += 5
                                 await fetchedFaction.save()
 
-                                const image = async () => {
-                                    if (
-                                        (await randomNumberInRange(0, 3)) == 0
-                                    ) {
-                                        return config.gifs.win[
-                                            await randomNumberInRange(
-                                                0,
-                                                config.gifs.win.length
-                                            )
-                                        ]
-                                    }
-
-                                    return null
-                                }
+                                const image = await getGIF()
 
                                 await interaction.channel.send({
                                     embeds: [

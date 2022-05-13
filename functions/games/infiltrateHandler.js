@@ -5,6 +5,7 @@ const config = require('../../config.json')
 const randomNumberInRange = require('../helpers/randomNumberInRange')
 
 const { tempInfiltrateData } = require('../core/createTempData')
+const { getWinGIF, getLoseGIF, getEvilGIF } = require('../helpers/getGIF')
 
 module.exports = async function infiltrateHandler(interaction) {
     try {
@@ -26,15 +27,7 @@ module.exports = async function infiltrateHandler(interaction) {
 
             if (generatedDice > 7) {
                 // Won
-                image = async () => {
-                    if ((await randomNumberInRange(0, 3)) == 0) {
-                        return config.gifs.win[
-                            await randomNumberInRange(0, config.gifs.win.length)
-                        ]
-                    }
-
-                    return null
-                }
+                image = await getEvilGIF()
 
                 const generatedXP = await randomNumberInRange(1000, 2500)
 
@@ -60,18 +53,7 @@ module.exports = async function infiltrateHandler(interaction) {
                 } and are rewarded ${inlineCode(generatedXP)} XP!`
             } else {
                 // Lost
-                image = async () => {
-                    if ((await randomNumberInRange(0, 3)) == 0) {
-                        return config.gifs.lose[
-                            await randomNumberInRange(
-                                0,
-                                config.gifs.lose.length
-                            )
-                        ]
-                    }
-
-                    return null
-                }
+                image = await getLoseGIF()
 
                 description = `<@${interaction.user.id}> used ${inlineCode(
                     '/infiltrate'

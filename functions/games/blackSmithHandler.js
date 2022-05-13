@@ -5,6 +5,7 @@ const config = require('../../config.json')
 const randomNumberInRange = require('../helpers/randomNumberInRange')
 
 const { tempBlacksmithData } = require('../core/createTempData')
+const { getWinGIF, getLoseGIF } = require('../helpers/getGIF')
 
 module.exports = async function blacksmithHandler(interaction) {
     try {
@@ -44,23 +45,12 @@ module.exports = async function blacksmithHandler(interaction) {
                 generatedXP > 500 ? 'earned' : 'lost'
             } ${inlineCode(Math.abs(generatedXP - 500))} XP.`
 
-            const image = async () => {
-                if ((await randomNumberInRange(0, 3)) == 0) {
-                    if (generatedXP > 500) {
-                        return config.gifs.win[
-                            await randomNumberInRange(0, config.gifs.win.length)
-                        ]
-                    } else {
-                        return config.gifs.lose[
-                            await randomNumberInRange(
-                                0,
-                                config.gifs.lose.length
-                            )
-                        ]
-                    }
-                }
+            let image
 
-                return null
+            if (generatedXP > 500) {
+                image = await getWinGIF()
+            } else {
+                image = await getLoseGIF()
             }
 
             await interaction.channel.send({

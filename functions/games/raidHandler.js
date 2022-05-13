@@ -5,6 +5,7 @@ const config = require('../../config.json')
 const randomNumberInRange = require('../helpers/randomNumberInRange')
 
 const { tempRaidData } = require('../core/createTempData')
+const { getWinGIF, getLoseGIF } = require('../helpers/getGIF')
 
 module.exports = async function raidHandler(interaction) {
     try {
@@ -29,15 +30,7 @@ module.exports = async function raidHandler(interaction) {
                 generatedRandomXP
             )} XP and return.`
 
-            const image = async () => {
-                if ((await randomNumberInRange(0, 3)) == 0) {
-                    return config.gifs.win[
-                        await randomNumberInRange(0, config.gifs.win.length)
-                    ]
-                }
-
-                return null
-            }
+            const image = await getWinGIF()
 
             await interaction.channel.send({
                 embeds: [
@@ -58,18 +51,7 @@ module.exports = async function raidHandler(interaction) {
             if (generatedDice > 5) {
                 // Lost
 
-                image = async () => {
-                    if ((await randomNumberInRange(0, 3)) == 0) {
-                        return config.gifs.lose[
-                            await randomNumberInRange(
-                                0,
-                                config.gifs.lose.length
-                            )
-                        ]
-                    }
-
-                    return null
-                }
+                image = await getLoseGIF()
 
                 await interaction.update({
                     embeds: [
