@@ -71,7 +71,7 @@ module.exports = {
                 ephemeral = true
             }
 
-            interaction.reply({
+            await interaction.reply({
                 embeds: [
                     new MessageEmbed()
                         .setColor(config.embed_color)

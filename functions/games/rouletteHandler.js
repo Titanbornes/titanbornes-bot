@@ -121,13 +121,20 @@ module.exports = {
                                 fetchedFaction.spots += 5
                                 await fetchedFaction.save()
 
-                                const image =
-                                    config.gifs.win[
-                                        await randomNumberInRange(
-                                            0,
-                                            config.gifs.win.length
-                                        )
-                                    ]
+                                const image = async () => {
+                                    if (
+                                        (await randomNumberInRange(0, 3)) == 0
+                                    ) {
+                                        return config.gifs.win[
+                                            await randomNumberInRange(
+                                                0,
+                                                config.gifs.win.length
+                                            )
+                                        ]
+                                    }
+
+                                    return null
+                                }
 
                                 await interaction.channel.send({
                                     embeds: [

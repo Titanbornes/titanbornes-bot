@@ -29,10 +29,15 @@ module.exports = async function raidHandler(interaction) {
                 generatedRandomXP
             )} XP and return.`
 
-            const image =
-                config.gifs.win[
-                    await randomNumberInRange(0, config.gifs.win.length)
-                ]
+            const image = async () => {
+                if ((await randomNumberInRange(0, 3)) == 0) {
+                    return config.gifs.win[
+                        await randomNumberInRange(0, config.gifs.win.length)
+                    ]
+                }
+
+                return null
+            }
 
             await interaction.channel.send({
                 embeds: [
@@ -47,18 +52,24 @@ module.exports = async function raidHandler(interaction) {
             fetchedUser.xp += generatedRandomXP
             await fetchedUser.save()
         } else {
-            // Continue
-
             let image
             const generatedDice = await randomNumberInRange(1, 8)
 
             if (generatedDice > 5) {
                 // Lost
 
-                image =
-                    config.gifs.lose[
-                        await randomNumberInRange(0, config.gifs.lose.length)
-                    ]
+                image = async () => {
+                    if ((await randomNumberInRange(0, 3)) == 0) {
+                        return config.gifs.lose[
+                            await randomNumberInRange(
+                                0,
+                                config.gifs.lose.length
+                            )
+                        ]
+                    }
+
+                    return null
+                }
 
                 await interaction.update({
                     embeds: [

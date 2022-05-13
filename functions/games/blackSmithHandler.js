@@ -44,14 +44,24 @@ module.exports = async function blacksmithHandler(interaction) {
                 generatedXP > 500 ? 'earned' : 'lost'
             } ${inlineCode(Math.abs(generatedXP - 500))} XP.`
 
-            const image =
-                generatedXP > 500
-                    ? config.gifs.win[
-                          await randomNumberInRange(0, config.gifs.win.length)
-                      ]
-                    : config.gifs.lose[
-                          await randomNumberInRange(0, config.gifs.lose.length)
-                      ]
+            const image = async () => {
+                if ((await randomNumberInRange(0, 3)) == 0) {
+                    if (generatedXP > 500) {
+                        return config.gifs.win[
+                            await randomNumberInRange(0, config.gifs.win.length)
+                        ]
+                    } else {
+                        return config.gifs.lose[
+                            await randomNumberInRange(
+                                0,
+                                config.gifs.lose.length
+                            )
+                        ]
+                    }
+                }
+
+                return null
+            }
 
             await interaction.channel.send({
                 embeds: [

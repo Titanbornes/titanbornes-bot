@@ -3,7 +3,6 @@ const { bold, inlineCode } = require('@discordjs/builders')
 const config = require('../../config.json')
 
 const randomNumberInRange = require('../helpers/randomNumberInRange')
-const checkRole = require('../core/checkRole')
 
 const { tempInfiltrateData } = require('../core/createTempData')
 
@@ -25,13 +24,18 @@ module.exports = async function infiltrateHandler(interaction) {
                 generatedTeammates
             )
 
-            const isReapers = await checkRole(interaction, 'Reapers')
+            if (generatedDice > 7) {
+                // Won
+                image = async () => {
+                    if ((await randomNumberInRange(0, 3)) == 0) {
+                        return config.gifs.win[
+                            await randomNumberInRange(0, config.gifs.win.length)
+                        ]
+                    }
 
-            if (generatedDice > (isReapers ? 7 : 7)) {
-                image =
-                    config.gifs.lose[
-                        await randomNumberInRange(0, config.gifs.lose.length)
-                    ]
+                    return null
+                }
+
                 const generatedXP = await randomNumberInRange(1000, 2500)
 
                 fetchedUser.xp += generatedXP
@@ -55,6 +59,20 @@ module.exports = async function infiltrateHandler(interaction) {
                         : `<@&${config.role.reapersID}>`
                 } and are rewarded ${inlineCode(generatedXP)} XP!`
             } else {
+                // Lost
+                image = async () => {
+                    if ((await randomNumberInRange(0, 3)) == 0) {
+                        return config.gifs.lose[
+                            await randomNumberInRange(
+                                0,
+                                config.gifs.lose.length
+                            )
+                        ]
+                    }
+
+                    return null
+                }
+
                 description = `<@${interaction.user.id}> used ${inlineCode(
                     '/infiltrate'
                 )}.\n\nThey decided to infiltrate with ${inlineCode(
